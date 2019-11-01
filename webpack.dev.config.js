@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: ['webpack-hot-middleware/client', './src/index.js']
+    main: ['webpack-hot-middleware/client', './src/index.tsx'],
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -14,8 +14,16 @@ module.exports = {
   mode: 'development',
   target: 'web',
   devtool: 'source-map',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         enforce: 'pre',
         test: /\.js$/,
@@ -25,7 +33,7 @@ module.exports = {
           emitWarning: true,
           failOnError: false,
           failOnWarning: false,
-        }
+        },
       },
       {
         test: /\.js$/,

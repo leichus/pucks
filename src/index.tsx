@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Message from './js/Message';
+import adder from './js/adder';
 
 import './css/style.css';
+
+console.log(adder(10, 2));
 
 ReactDOM.render(
   <Message/>,
