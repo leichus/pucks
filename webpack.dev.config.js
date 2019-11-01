@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: './src/index.js',
+    main: ['webpack-hot-middleware/client', './src/index.js']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -45,5 +45,6 @@ module.exports = {
       filename: "./index.html",
     }),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
