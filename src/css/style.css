@@ -15,3 +15,18 @@ h1, h2, h3, h4, h5, p {
     background-size: 100% auto;
     background-repeat: no-repeat;
 }
+
+.App {
+    text-align: center;
+}
+
+.divStyle {
+    background: aqua;
+    text-align: center;
+}
+
+
+.divStyle2 {
+    background: chartreuse;
+    text-align: center;
+}
